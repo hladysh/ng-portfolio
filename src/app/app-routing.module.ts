@@ -8,6 +8,7 @@ import {NotFoundComponent} from './shared/components/not-found/not-found.compone
 import {ContactsComponent} from './views/contacts/contacts.component';
 import {PortfolioComponent} from './views/portfolio/portfolio.component';
 import {BlogComponent} from './views/blog/blog.component';
+import {InfiniteScrollComponent} from './views/infinite-scroll/infinite-scroll.component';
 
 
 // const routes: Routes = [
@@ -47,6 +48,13 @@ const appRouters: Routes = [
   {
     path: 'blog',
     component: BlogComponent,
+    data: {
+      title: 'Blog page'
+    }
+  },
+  {
+    path: 'test',
+    component: InfiniteScrollComponent,
     data: {
       title: 'Blog page'
     }

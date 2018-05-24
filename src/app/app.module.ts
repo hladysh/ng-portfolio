@@ -20,6 +20,7 @@ import {SidebarComponent} from './shared/components/sidebar/sidebar.component';
 import {NotFoundComponent} from './shared/components/not-found/not-found.component';
 import {MatIconModule} from '@angular/material/icon';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 
 
 
@@ -34,6 +35,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
   ],
   imports: [
     BrowserModule,
+
     HttpClientModule,
     NgbModule.forRoot(),
     MaterialModulesModule,
