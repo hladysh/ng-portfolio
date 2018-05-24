@@ -1,3 +1,27 @@
-<p>
-  portfolio works!
-</p>
+<div class="section-item section-portfolio">
+  <div class="container">
+    <h4 class="section-subtitle"><i class="icon fa fa-bookmark"></i>I’M FRONT-END DEVELOPER</h4>
+    <blockquote class="blockquote">
+      <i class="icon fa fa-quote-left fa-lg "></i>
+      <p>I enjoy turning complex problems into simple, beautiful and intuitive interface designs.</p>
+
+      <i class="icon fa fa-quote-right fa-lg " aria-hidden="true"></i>
+    </blockquote>
+    <hr class="hr-blue">
+    <h4 class="section-subtitle"><i class="icon fa fa-bookmark"></i>I’M FRONT-END DEVELOPER</h4>
+    <div class="portfolio-wrap" >
+      <div class="portfolio-item" *ngFor="let portfolioItem of portfolioList">
+        <div class="img-wrap">
+          <img src="../../../assets/img/{{portfolioItem.img}}" alt="{{portfolioItem.alt}}">
+        </div>
+        <div class="portfolio-body">
+          <h4 class="portfolio-title">{{portfolioItem.descr}}</h4>
+          <p class="portfolio-descr">{{portfolioItem.name}}</p>
+        </div>
+        <div class="portfolio-footer">
+          <a href="{{portfolioItem.href}}" class="btn-demo" target="_blank">Live demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

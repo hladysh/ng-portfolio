@@ -133,6 +133,49 @@ a
 .section-text
   font-size: 16px
   margin-bottom: 30px
+.portfolio-wrap
+  display: flex
+  flex-direction: row
+  flex-wrap: wrap
+  align-items: center
+  justify-content: space-between
+  .portfolio-item
+    position: relative
+    max-width: calc( 50% - 10px)
+    margin-right: 20px
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.298039)
+    margin-bottom: 30px
+    &:nth-child(2n)
+      margin-right: 0
+    .img-wrap
+      max-height: 200px
+      overflow: hidden
+      border-bottom: 6px solid #303F9F
+      img
+        display: block
+        max-width: 100%
+  .portfolio-body
+    padding: 10px 20px
+    min-height: 150px
+    .portfolio-title
+      font-size: 18px
+      font-weight: 700
+      line-height: 30px
+    .portfolio-descr
+      margin-top: 20px
+  .portfolio-footer
+    padding: 10px 20px
+    border-top: 2px solid #C5CAE9
+    .btn-demo
+      display: inline-block
+      padding: 10px 8px
+      text-align: center
+      border: 1px solid #303F9F
+      background-color: #fff
+      font-size: 14px
+      font-weight: 700
+      color: #303F9F
+      text-transform: uppercase
 @import "modules/header"
 @import "modules/sidebar"
 @import "pages/about-page"
