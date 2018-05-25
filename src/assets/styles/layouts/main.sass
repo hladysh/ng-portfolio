@@ -141,7 +141,8 @@ a
   justify-content: space-between
   .portfolio-item
     position: relative
-    max-width: calc( 50% - 10px)
+    //max-width: calc( 50% - 10px)
+    max-width: 375px
     margin-right: 20px
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.298039)
     margin-bottom: 30px
@@ -176,6 +177,28 @@ a
       font-weight: 700
       color: #303F9F
       text-transform: uppercase
+.section-blog
+  .img-wrap
+    position: relative
+  .post-data
+    position: absolute
+    top: 0
+    right: 0
+    padding: 4px 10px
+    background: #303F9F
+    font-size: 14px
+    color: #fff
+  .portfolio-footer
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+    .tesgs-wrap
+      display: flex
+      flex-direction: row
+      align-items: center
+    .tegs-list
+      margin-left: 5px
 @import "modules/header"
 @import "modules/sidebar"
 @import "pages/about-page"

@@ -9,6 +9,7 @@ import {ContactsComponent} from './views/contacts/contacts.component';
 import {PortfolioComponent} from './views/portfolio/portfolio.component';
 import {BlogComponent} from './views/blog/blog.component';
 import {InfiniteScrollComponent} from './views/infinite-scroll/infinite-scroll.component';
+import {BlogDetailsComponent} from './views/blog/blog-details/blog-details.component';
 
 
 // const routes: Routes = [
@@ -50,7 +51,12 @@ const appRouters: Routes = [
     component: BlogComponent,
     data: {
       title: 'Blog page'
-    }
+    },
+    children: [
+      {
+        path: 'blog:id',
+        component: BlogDetailsComponent,
+      }],
   },
   {
     path: 'test',

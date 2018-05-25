@@ -1,3 +1,38 @@
-<p>
-  blog works!
-</p>
+<div class="section-item section-blog">
+  <div class="container">
+    <!--<h4 class="section-subtitle"><i class="icon fa fa-bookmark"></i>I’M FRONT-END DEVELOPER</h4>-->
+    <blockquote class="blockquote">
+      <i class="icon fa fa-quote-left fa-lg "></i>
+      <p>In the future there will be my little blog</p>
+      <i class="icon fa fa-quote-right fa-lg " aria-hidden="true"></i>
+    </blockquote>
+    <hr class="hr-blue">
+
+    <div class="portfolio-wrap">
+      <div class="portfolio-item" *ngFor="let blogItem of blogList">
+        <!--<a [routerLink]="['/blog', blogItem.Id]">-->
+        <div class="img-wrap">
+          <img src="../../../assets/img/{{blogItem.img}}" alt="{{blogItem.alt}}">
+          <span class="post-data">{{blogItem.day}}</span>
+        </div>
+        <!--</a>-->
+        <div class="portfolio-body">
+          <a><h4 class="portfolio-title">{{blogItem.descr}}</h4></a>
+          <p class="portfolio-descr">{{blogItem.name}}</p>
+        </div>
+        <div class="portfolio-footer">
+          <div class="tesgs-wrap" *ngIf="blogItem.tegs.length !== 0 ">
+            <i class="icon fa fa-compass "></i>
+            <span>Tags:</span>
+            <div class="tegs-list" *ngFor="let teg of blogItem.tegs">
+              <a href="{{teg}}">{{teg}}</a>
+            </div>
+          </div>
+          <a href="{{blogItem.href}}" class="btn-demo" target="_blank">Live demo</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-blog-details [blogList]="blogList"></app-blog-details>
