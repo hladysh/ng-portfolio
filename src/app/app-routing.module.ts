@@ -16,7 +16,8 @@ import {BlogDetailsComponent} from './views/blog/blog-details/blog-details.compo
 //     { path: '', component: SystemComponent}
 // ];
 const appRouters: Routes = [
-  { path: '',
+  {
+    path: '',
     redirectTo: '/about',
     pathMatch: 'full'
   },
@@ -51,13 +52,16 @@ const appRouters: Routes = [
     component: BlogComponent,
     data: {
       title: 'Blog page'
-    },
-    children: [
-      {
-        path: 'blog:id',
-        component: BlogDetailsComponent,
-      }],
+    }
   },
+  {
+    path: 'blog/:id',
+    component: BlogDetailsComponent,
+    data: {
+      title: 'portfolio page'
+    }
+  },
+
   {
     path: 'test',
     component: InfiniteScrollComponent,
@@ -66,14 +70,12 @@ const appRouters: Routes = [
     }
   },
   {
-    path: '**', // Otherwise
+    path: '**',
     component: NotFoundComponent,
     data: {
       title: 'Page not found'
     }
-    // redirectTo: '/'
-  }
-];
+  }];
 
 @NgModule({
   imports: [RouterModule.forRoot(appRouters)],

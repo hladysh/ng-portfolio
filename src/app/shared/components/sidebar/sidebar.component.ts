@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {BlogService} from '../../servises/blog.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -6,10 +7,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidebar.component.sass']
 })
 export class SidebarComponent implements OnInit {
+  blogServiseAll;
 
-  constructor() { }
+  constructor(private blogServise: BlogService) {
+  }
 
   ngOnInit() {
+    // console.log(this.blogServise);
+    this.blogServiseAll = this.blogServise;
   }
 
 }

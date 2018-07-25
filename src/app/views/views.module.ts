@@ -8,6 +8,7 @@ import {BlogComponent} from './blog/blog.component';
 import {InfiniteScrollComponent} from './infinite-scroll/infinite-scroll.component';
 import {InfiniteScrollModule} from 'ngx-infinite-scroll';
 import { BlogDetailsComponent } from './blog/blog-details/blog-details.component';
+import {BlogService} from '../shared/servises/blog.service';
 
 @NgModule({
   imports: [
@@ -22,7 +23,8 @@ import { BlogDetailsComponent } from './blog/blog-details/blog-details.component
     BlogComponent,
     InfiniteScrollComponent,
     BlogDetailsComponent
-  ]
+  ],
+  providers: [BlogService],
 })
 export class ViewsModule {
 }
