@@ -1,7 +1,7 @@
 import {PORTFOLIO_ACTION, PortfolioAction} from './portfolio.action';
 
 const initialState = {
-  portfolios: []
+  portfolio: []
 };
 
 export function portfolioReducer(state = initialState, action: PortfolioAction) {

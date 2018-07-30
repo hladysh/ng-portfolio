@@ -4,6 +4,7 @@ import {Store} from '@ngrx/store';
 import {Portfolios} from '../../models/portfolio.model';
 import {AppState} from '../../redux/app.state';
 import {Observable} from 'rxjs';
+import {PortfolioService} from '../../shared/servises/portfolio.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -49,16 +50,20 @@ export class PortfolioComponent implements OnInit {
   //   console.log(this.portfolioList);
   // }
 
-  constructor(private store: Store<AppState>) {
+  constructor(
+    private store: Store<AppState>,
+    private portfolioService: PortfolioService,
+  ) {
   }
 
   ngOnInit() {
+    this.portfolioService.loadPortfolio();
     this.portfolioState = this.store.select('portfolioPage');
     // this.portfolioState = this.store.select('portfolioPage').subscribe(data => {
     //   console.log(data);
     // });
 
-    console.log(this.portfolioState);
+    // console.log(this.portfolioState);
   }
 
 }

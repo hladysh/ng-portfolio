@@ -10,9 +10,9 @@
     <hr class="hr-blue">
 
     <h4 class="section-subtitle"><i class="icon fa fa-bookmark"></i>I’M FRONT-END DEVELOPER</h4>
-
-    <div class="portfolio-wrap" >
-      <div class="portfolio-item" *ngFor="let portfolioItem of portfolioList">
+    <div class="loader-wrap" *ngIf="!portfolioService.appLoader">appLoader</div>
+    <div class="portfolio-wrap" *ngIf="portfolioService.appLoader">
+      <div class="portfolio-item" *ngFor="let portfolioItem of (portfolioState | async).portfolio ">
         <div class="img-wrap">
           <img src="../../../assets/img/{{portfolioItem.img}}" alt="{{portfolioItem.alt}}">
         </div>
