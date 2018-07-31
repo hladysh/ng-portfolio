@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-resume',
@@ -6,10 +6,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./resume.component.sass']
 })
 export class ResumeComponent implements OnInit {
+  appLoader = false;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+    this.appLoader = true;
   }
 
 }

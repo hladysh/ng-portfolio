@@ -1,23 +1,22 @@
-<div class="section-item section-blog">
-
+<div *ngIf="!appLoader">
+  <app-loader></app-loader>
+</div>
+<div class="section-item section-blog" *ngIf="appLoader">
   <div class="container">
-    <!--<h4 class="section-subtitle"><i class="icon fa fa-bookmark"></i>I’M FRONT-END DEVELOPER</h4>-->
+    <h2 class="section-title">portfolio</h2>
+    <h4 class="section-subtitle"><i class="icon fa fa-bookmark"></i>My Diary</h4>
     <blockquote class="blockquote">
       <i class="icon fa fa-quote-left fa-lg "></i>
       <p>In the future there will be my little blog</p>
       <i class="icon fa fa-quote-right fa-lg " aria-hidden="true"></i>
     </blockquote>
     <hr class="hr-blue">
-    <!--<a [routerLink]="['/blog', 1]">  fdfdf</a>-->
-
     <div class="portfolio-wrap">
       <div class="portfolio-item" *ngFor="let blogItem of blogList">
-
         <div class="img-wrap">
           <img src="../../../assets/img/{{blogItem.img}}" alt="{{blogItem.alt}}">
           <span class="post-data">{{blogItem.day}}</span>
         </div>
-
         <div class="portfolio-body">
           <a><h4 class="portfolio-title">{{blogItem.descr}}</h4></a>
           <p class="portfolio-descr">{{blogItem.name}}</p>
@@ -36,7 +35,5 @@
     </div>
   </div>
 </div>
-
-<!--<app-blog-details [blogList]="blogList"></app-blog-details>-->
 
 

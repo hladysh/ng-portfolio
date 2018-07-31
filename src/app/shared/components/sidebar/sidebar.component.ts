@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {BlogService} from '../../servises/blog.service';
+import {BlogService} from '../../../views/blog/blog.service';
+import {AuthService} from '../../../auth/auth.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -9,11 +10,13 @@ import {BlogService} from '../../servises/blog.service';
 export class SidebarComponent implements OnInit {
   blogServiseAll;
 
-  constructor(private blogServise: BlogService) {
+  constructor(private blogServise: BlogService,
+              public authService: AuthService) {
   }
 
   ngOnInit() {
     // console.log(this.blogServise);
+    // console.log('this.authService.authState Sidear  ' + this.authService.authState);
     this.blogServiseAll = this.blogServise;
   }
 

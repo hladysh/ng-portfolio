@@ -1,3 +1,55 @@
-<p>
-  contacts works!
-</p>
+<div *ngIf="!appLoader">
+  <app-loader></app-loader>
+</div>
+<div class="container">
+  <h2 class="section-title">Contact</h2>
+  <h4 class="section-subtitle"><i class="icon fa fa-bookmark"></i>Get in Touch</h4>
+  <hr class="hr-blue">
+  <div class="contact-info-wrap  d-flex">
+    <div class="contact-item d-flex">
+      <i class="icon fa fa-envelope fa-3x"></i>
+      <div class="contact-info d-flex">
+        <span class="contact-text contact-title">E-mail</span>
+        <a href="mailto:hladysh.im@gmail.com" class="contact-text ">hladysh.im@gmail.com</a>
+      </div>
+    </div>
+    <div class="contact-item d-flex">
+      <i class="icon fa fa-phone fa-3x" aria-hidden="true"></i>
+      <div class="contact-info d-flex">
+        <span class="contact-text contact-title">Phone</span>
+        <a href="tel:0638141671" class="contact-text ">0638141671</a>
+      </div>
+    </div>
+    <div class="contact-item d-flex">
+      <i class="icon fa fa-skype fa-3x" aria-hidden="true"></i>
+      <div class="contact-info d-flex">
+        <span class="contact-text contact-title">skype</span>
+        <a href="tel:ivanhladish" class="contact-text ">ivanhladish</a>
+      </div>
+    </div>
+  </div>
+  <hr class="hr-blue">
+
+  <div class="contact-form-wrap">
+    <h4 class="section-subtitle">How Can I Help You?</h4>
+    <div class="row">
+      <div class="col">
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Full Name">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Email Address">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <input matInput placeholder="Subject">
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <textarea matInput placeholder="Message"></textarea>
+        </mat-form-field>
+        <button mat-raised-button color="primary">Send message</button>
+      </div>
+
+    </div>
+
+  </div>
+</div>

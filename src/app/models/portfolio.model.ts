@@ -1,12 +1,11 @@
 export class Portfolio {
   constructor(
+    public portfolioImg: string,
+    public portfolioAlt: string,
+    public portfolioName: string,
+    public portfolioDescr: string,
+    public portfolioHref: string,
 
-    public img: string,
-    public alt: string,
-    public name: string,
-    public descr: string,
-    public href: string,
-    public id?: number,
   ) {
   }
 }

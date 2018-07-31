@@ -1,27 +1,38 @@
-<div class="section-item section-portfolio">
+<div *ngIf="!portfolioService.appLoader">
+  <app-loader></app-loader>
+</div>
+<div class="section-item section-portfolio" *ngIf="portfolioService.appLoader">
   <div class="container">
-    <h4 class="section-subtitle"><i class="icon fa fa-bookmark"></i>I’M FRONT-END DEVELOPER</h4>
+    <h2 class="section-title">portfolio</h2>
+    <h4 class="section-subtitle"><i class="icon fa fa-bookmark"></i>My Works</h4>
+    <hr class="hr-blue">
     <blockquote class="blockquote">
       <i class="icon fa fa-quote-left fa-lg "></i>
       <p>I enjoy turning complex problems into simple, beautiful and intuitive interface designs.</p>
       <i class="icon fa fa-quote-right fa-lg " aria-hidden="true"></i>
     </blockquote>
-
-    <hr class="hr-blue">
-
-    <h4 class="section-subtitle"><i class="icon fa fa-bookmark"></i>I’M FRONT-END DEVELOPER</h4>
     <div class="loader-wrap" *ngIf="!portfolioService.appLoader">appLoader</div>
     <div class="portfolio-wrap" *ngIf="portfolioService.appLoader">
-      <div class="portfolio-item" *ngFor="let portfolioItem of (portfolioState | async).portfolio ">
+      <div *ngIf="portfolioService.portfolioList.length == 0">
+        There are no jobs in the portfolio
+        <a routerLink="../admin/add-portfolio">Add portfolio</a>
+      </div>
+      <div class="portfolio-item" *ngFor="let portfolioItem of portfolioService.portfolioList ">
+        <div class="manag-wrap" *ngIf="authService.authState">
+          <a routerLink="../admin/edit-portfolio/{{portfolioItem.id}}" class="edit-portfolio"> <i
+            class="icon fa fa-edit fa-1x"></i></a>
+          <a class="edit-portfolio delate-portfolio" (click)="delateItem(portfolioItem.id)"><i
+            class="icon fa fa-trash fa-1x"></i></a>
+        </div>
         <div class="img-wrap">
-          <img src="../../../assets/img/{{portfolioItem.img}}" alt="{{portfolioItem.alt}}">
+          <img src="{{portfolioItem.portfolioImg}}" alt="{{portfolioItem.portfolioAlt}}">
         </div>
         <div class="portfolio-body">
-          <h4 class="portfolio-title">{{portfolioItem.descr}}</h4>
-          <p class="portfolio-descr">{{portfolioItem.name}}</p>
+          <h4 class="portfolio-title">{{portfolioItem.portfolioName}}</h4>
+          <p class="portfolio-descr">{{portfolioItem.portfolioDescr}}</p>
         </div>
         <div class="portfolio-footer">
-          <a href="{{portfolioItem.href}}" class="btn-demo" target="_blank">Live demo</a>
+          <a href="{{portfolioItem.portfolioHref}}" class="btn-demo" target="_blank">Live demo</a>
         </div>
       </div>
     </div>

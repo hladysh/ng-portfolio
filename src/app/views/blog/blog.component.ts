@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {BlogService} from '../../shared/servises/blog.service';
+import {BlogService} from './blog.service';
 
 @Component({
   selector: 'app-blog',
@@ -9,6 +9,7 @@ import {BlogService} from '../../shared/servises/blog.service';
 })
 export class BlogComponent implements OnInit {
   blogList: any;
+  appLoader = false;
 
   constructor(
     private activatedRoute: ActivatedRoute,
@@ -17,8 +18,9 @@ export class BlogComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.appLoader = true;
     this.blogList = this.blogService.blogList;
-    console.log(this.blogList);
+    // console.log(this.blogList);
   }
 
 }

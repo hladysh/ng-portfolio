@@ -5,15 +5,22 @@ import {ResumeComponent} from './resume/resume.component';
 import {ContactsComponent} from './contacts/contacts.component';
 import {PortfolioComponent} from './portfolio/portfolio.component';
 import {BlogComponent} from './blog/blog.component';
-import {InfiniteScrollComponent} from './infinite-scroll/infinite-scroll.component';
-import {InfiniteScrollModule} from 'ngx-infinite-scroll';
-import { BlogDetailsComponent } from './blog/blog-details/blog-details.component';
-import {BlogService} from '../shared/servises/blog.service';
+import {BlogDetailsComponent} from './blog/blog-details/blog-details.component';
+import {BlogService} from './blog/blog.service';
+import {RouterModule} from '@angular/router';
+
+import {MaterialModule} from '../shared/moduls/material.module';
+import {SharedModule} from '../shared/moduls/shared.module';
+import {LoaderComponent} from '../shared/components/loader/loader.component';
+
+
 
 @NgModule({
   imports: [
+    SharedModule,
     CommonModule,
-    InfiniteScrollModule,
+    // RouterModule,
+    MaterialModule,
   ],
   declarations: [
     AboutComponent,
@@ -21,8 +28,8 @@ import {BlogService} from '../shared/servises/blog.service';
     ContactsComponent,
     PortfolioComponent,
     BlogComponent,
-    InfiniteScrollComponent,
-    BlogDetailsComponent
+    BlogDetailsComponent,
+    LoaderComponent,
   ],
   providers: [BlogService],
 })

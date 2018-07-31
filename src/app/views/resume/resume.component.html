@@ -1,6 +1,11 @@
-<div class="section-item section-resume">
+<div *ngIf="!appLoader">
+  <app-loader></app-loader>
+</div>
+<div class="section-item section-resume w-100">
   <div class="container">
     <h2 class="section-title">RESUME</h2>
+    <h4 class="section-subtitle"><i class="icon fa fa-bookmark"></i>I’M FRONT-END DEVELOPER</h4>
+    <hr class="hr-blue">
     <blockquote class="blockquote">
       <i class="icon fa fa-quote-left fa-lg "></i>
       <p> I graduated from Lviv Politechnic National University.
@@ -13,10 +18,8 @@
     </blockquote>
     <a class="btn-resume" target="_blank" href="https://drive.google.com/open?id=0ByZun7Y7x4VlNXVoQldORG9uTnc">Resume
       PDF</a>
-
     <hr class="hr-blue">
     <h4 class="section-subtitle"><i class="icon fa fa-graduation-cap"></i>EDUCATION</h4>
-
     <div class="time-line-wrap">
       <div class="time-line-item">
         <h4 class="time-line-title">Lviv Polytechnic National University</h4>

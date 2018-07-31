@@ -1,0 +1,13 @@
+<div *ngIf="!authService.authState" class="login-form-wrap">
+  <p class="login-title">You need to login to log in to the admin panel!</p>
+  <mat-form-field class="example-full-width">
+    <input matInput type="email" [(ngModel)]="email" placeholder="Email">
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput type="password" [(ngModel)]="password" placeholder="Password">
+  </mat-form-field>
+  <button (click)="login()" [disabled]="!email || !password" mat-raised-button color="primary">Login</button>
+</div>
+
+

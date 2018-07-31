@@ -6,10 +6,11 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contacts.component.sass']
 })
 export class ContactsComponent implements OnInit {
-
+  appLoader = false;
   constructor() { }
 
   ngOnInit() {
+    this.appLoader = true;
   }
 
 }

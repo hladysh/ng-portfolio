@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {BlogService} from '../../../shared/servises/blog.service';
+import {BlogService} from '../blog.service';
 
 @Component({
   selector: 'app-blog-details',
@@ -20,11 +20,9 @@ export class BlogDetailsComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.detail = details;
-    // debugger
     console.log(this.blogService.blogList);
     console.log(this.params);
-    // console.log(details);
+
   }
 
 }

@@ -4,7 +4,11 @@ import {Store} from '@ngrx/store';
 import {Portfolios} from '../../models/portfolio.model';
 import {AppState} from '../../redux/app.state';
 import {Observable} from 'rxjs';
-import {PortfolioService} from '../../shared/servises/portfolio.service';
+
+import {AngularFirestore} from 'angularfire2/firestore';
+import {AuthService} from '../../auth/auth.service';
+import {Router} from '@angular/router';
+import {PortfolioService} from './portfolio.service';
 
 @Component({
   selector: 'app-portfolio',
@@ -14,56 +18,26 @@ import {PortfolioService} from '../../shared/servises/portfolio.service';
 export class PortfolioComponent implements OnInit {
 
   public portfolioState: Observable<Portfolios>;
-
-  portfolioList = [
-    {
-      id: 1,
-      img: 'bags.PNG',
-      alt: 'bags',
-      name: 'Шустрік',
-      descr: 'Розробка сайту',
-      href: 'http://bizik.shustrik.com.ua/',
-    },
-    {
-      id: 2,
-      img: 'b-b.png',
-      alt: 'bags',
-      name: '',
-      descr: '',
-      href: '',
-    },
-    {
-      id: 3,
-      img: 'lux-visa.png',
-      alt: 'Lux-visa',
-      name: 'Lux-visa',
-      descr: 'Центр візової підтримки',
-      href: 'http://luxvisa.com.ua/',
-    },
-  ];
-
-  // constructor() {
-  // }
-  //
-  //
-  // ngOnInit() {
-  //   console.log(this.portfolioList);
-  // }
+  portfolioList: Observable<any[]>;
 
   constructor(
-    private store: Store<AppState>,
-    private portfolioService: PortfolioService,
+    public db: AngularFirestore,
+    // private store: Store<AppState>,
+    public rooter: Router,
+    public authService: AuthService,
+    public portfolioService: PortfolioService,
   ) {
+
+  }
+
+  delateItem(id) {
+    this.db.doc('portfolioList/' + id).delete();
   }
 
   ngOnInit() {
     this.portfolioService.loadPortfolio();
-    this.portfolioState = this.store.select('portfolioPage');
-    // this.portfolioState = this.store.select('portfolioPage').subscribe(data => {
-    //   console.log(data);
-    // });
+    // this.portfolioState = this.store.select('portfolioPage');
 
-    // console.log(this.portfolioState);
   }
 
 }

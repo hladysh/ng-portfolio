@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {Routes} from '@angular/router';
 
 @Component({
   selector: 'app-about',
@@ -8,7 +7,7 @@ import {Routes} from '@angular/router';
 })
 export class AboutComponent implements OnInit {
 
-
+  appLoader = false;
   skills = [
     {
       name: 'HTML',
@@ -64,11 +63,11 @@ export class AboutComponent implements OnInit {
 
   ];
 
-
   constructor() {
   }
 
   ngOnInit() {
+    this.appLoader = true;
   }
 
 }

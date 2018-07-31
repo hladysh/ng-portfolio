@@ -1,7 +1,11 @@
-<div class="section-item section-about">
+<div *ngIf="!appLoader">
+  <app-loader></app-loader>
+</div>
+<div class="section-item section-about" *ngIf="appLoader">
   <div class="container">
-    <h2 class="section-title">PORTFOLIO</h2>
+    <h2 class="section-title">About</h2>
     <h4 class="section-subtitle"><i class="icon fa fa-bookmark"></i>I’M FRONT-END DEVELOPER</h4>
+    <hr class="hr-blue">
     <p class="section-text">I enjoy turning complex problems into simple, beautiful and intuitive interface designs.</p>
     <blockquote class="blockquote">
       <i class="icon fa fa-quote-left fa-lg "></i>
@@ -71,5 +75,6 @@
         </div>
       </div>
     </div>
+    <hr class="hr-blue">
   </div>
 </div>

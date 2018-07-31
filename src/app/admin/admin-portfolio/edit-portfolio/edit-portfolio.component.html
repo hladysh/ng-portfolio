@@ -1,0 +1,11 @@
+
+<div *ngIf="!portfolioFormService.editState">
+ <!--<app-loader></app-loader>-->
+</div>
+
+<div *ngIf="portfolioFormService.editState">
+  <app-portfolio-form [IDportfolio]="portfolioID"></app-portfolio-form>
+</div>
+
+
+

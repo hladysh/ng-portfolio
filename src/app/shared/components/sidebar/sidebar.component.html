@@ -7,23 +7,29 @@
   <nav>
     <ul class="nav-list">
       <li routerLinkActive="active" class="nav-item">
-        <a routerLink="/about">About</a>
+        <a routerLink="/about" class="nav-link"> About</a>
       </li>
       <li routerLinkActive="active" class="nav-item">
-        <a routerLink="resume">Resume</a>
+        <a routerLink="resume"  class="nav-link">Resume</a>
       </li>
       <li routerLinkActive="active" class="nav-item">
-        <a routerLink="portfolio">Portfolio</a>
+        <a routerLink="portfolio"  class="nav-link">Portfolio</a>
       </li>
       <li routerLinkActive="active" class="nav-item">
-        <a routerLink="blog">Blog</a>
+        <a routerLink="blog"  class="nav-link">Blog</a>
       </li>
       <li routerLinkActive="active" class="nav-item">
-        <a routerLink="contacts">Contacts</a>
+        <a routerLink="contacts"  class="nav-link">Contacts</a>
       </li>
-      <!--<li routerLinkActive="active" class="nav-item">-->
-      <!--<a routerLink="test">test</a>-->
-      <!--</li>-->
+      <li routerLinkActive="active" class="nav-item" *ngIf="authService.authState">
+        <a routerLink="admin/add-portfolio"  class="nav-link">Admin</a>
+      </li>
+      <li routerLinkActive="active" class="nav-item" *ngIf="!authService.authState">
+        <a routerLink="login"  class="nav-link">Login</a>
+      </li>
+      <li routerLinkActive="active" class="nav-item" *ngIf="authService.authState">
+        <a routerLink="login"  class="nav-link">Logout</a>
+      </li>
     </ul>
   </nav>
   <div class="social-wrap">
@@ -37,4 +43,3 @@
     </ul>
   </div>
 </div>
-

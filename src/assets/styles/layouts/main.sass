@@ -3,42 +3,49 @@
 @import "mixins"
 @import "normalize"
 
-
 body
-  color : #EFEFEF
-
-a
   color: #EFEFEF
 
+a
+  color: blue
+
 .img-responsive
-	display: block
-	max-width: 100%
-	height: auto
+  display: block
+  max-width: 100%
+  height: auto
 
 .text-center
-	text-align: center
-
+  text-align: center
 
 .wraper
   height: 100%
+  color: #222
   display: flex
   align-items: center
   justify-content: space-between
   background: #666666
+  min-height: 100vh
   .sidebar-wrap
     position: fixed
     height: 100vh
-    width: 23%
+    min-width: 200px
+    width: 17%
     left: 0
     top: 0
     bottom: 0
-    background: #273747
+    background: #f5f5f5
   .content-wrap
     position: relative
-    margin-left: calc( 23% + 30px )
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: center
+    margin-left: calc(17% + 30px)
     background: #ffffff
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5)
     color: #000
+    min-height: calc( 100vh - 105px)
+
 .sidebar-contant
   display: flex
   //align-items: center
@@ -50,19 +57,17 @@ a
 
 .fa:before
   color: #303F9F
+
+.w-100
+  width: 100%
 .content-wrap
   margin: 20px 20px
   padding: 15px 30px 35px 30px
-  width: 77%
-  //height: 100%
-  //background: #EFEFEF
-.section-item
-  //text-align: center
+  width: 83%
 
 .section-title
   position: relative
   text-align: center
-  margin-bottom: 35px
   font-size: 24px
   font-weight: 700
   letter-spacing: 1.5px
@@ -83,18 +88,18 @@ a
     left: -70px
   &:after
     right: -70px
+
 .blockquote
   position: relative
   padding: 0 3.5rem
   border-left: 5px solid #303F9F
 .hr-blue
-  border: 0px
+  border: 0
   border-bottom: 1px dashed #303F9F
 
 .skill-wrap
   display: flex
   flex-wrap: wrap
-
   .skill-item
     border: 1px solid #303F9F
     border-radius: 10px
@@ -107,10 +112,11 @@ a
       background-color: #303F9F
       border-color: #303F9F
       +tr(0.5s)
+
 .blockquote
   position: relative
   font-size: 16px
-  margin-bottom: 35px
+  margin: 35px 0
   .fa
     position: absolute
     &.fa-quote-left
@@ -121,6 +127,7 @@ a
       right: 0
   p
     margin-bottom: 10px
+
 .section-subtitle
   font-size: 18px
   margin: 30px 0 40px 0
@@ -130,9 +137,11 @@ a
   text-transform: uppercase
   .icon
     margin-right: 10px
+
 .section-text
   font-size: 16px
   margin-bottom: 30px
+
 .portfolio-wrap
   display: flex
   flex-direction: row
@@ -142,12 +151,16 @@ a
   .portfolio-item
     position: relative
     //max-width: calc( 50% - 10px)
-    max-width: 375px
-    margin-right: 20px
+    max-width: 475px
+    width: 48%
+    min-width: 350px
+    margin-right: 4%
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.298039)
     margin-bottom: 30px
     &:nth-child(2n)
       margin-right: 0
+
+
     .img-wrap
       max-height: 200px
       overflow: hidden
@@ -155,6 +168,10 @@ a
       img
         display: block
         max-width: 100%
+  &.portfolio-preview
+    .portfolio-item
+      width: 100%
+      margin-right: 0
   .portfolio-body
     padding: 10px 20px
     min-height: 150px
@@ -177,6 +194,12 @@ a
       font-weight: 700
       color: #303F9F
       text-transform: uppercase
+      transition: 0.2s
+      &:hover
+        color: #fff
+        background-color: #303F9F
+        text-decoration: none
+
 .section-blog
   .img-wrap
     position: relative
@@ -199,10 +222,47 @@ a
       align-items: center
     .tegs-list
       margin-left: 5px
+
+.example-form
+  min-width: 150px
+  max-width: 500px
+  width: 100%
+
+.example-full-width
+  width: 100%
+//.manag-wrap
+//  display: flex
+//  flex-direction: row
+.portfolio-item
+  position: relative
+  .manag-wrap
+    position: absolute
+    right: 0
+    top: 0
+    color: blue
+    font-size: 15px
+    background: #f5f5f5
+  .edit-portfolio
+    margin-right: 10px
+    cursor: pointer
+    &:first-child
+      margin-left: 10px
+//app-admin,
+//app-contacts
+//  width: 100%
+app-contacts
+
+app-login,
+app-auth
+  display: flex
+  align-items: center
+  justify-content: center
+  flex-direction: column
 @import "modules/header"
 @import "modules/sidebar"
 @import "pages/about-page"
 
 @import "modules/footer"
 
-@import "media" // Always at the end
+@import "media"
+// Always at the end

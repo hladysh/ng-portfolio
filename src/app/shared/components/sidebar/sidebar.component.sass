@@ -14,29 +14,40 @@
   font-style: italic
   margin-bottom: 10px
   text-align: center
-  color : #ffffff
+  color : #303f9f
 .job-title
-  color : #9DA1B3
+  color : #aaa
   font-size: 16px
   margin-bottom: 40px
   text-align: center
 .nav-list
+
   margin-bottom: 30px
   .nav-item
-    a
-      color: #EFEFEF
+    text-align: center
+    //padding: 10px
+    width: 100%
+    border: 1px solid #e8e3e3
+    background: #fcfcfc
+    .nav-link
+      color: #222
       font-size: 16px
       font-weight: 600
+      display: block
+      padding: 10px 0
     &:hover
-      a
-        color: #6DBCDB
+      background-color: #f5f5f5
+      .nav-link
+        color: #303f9f
         text-decoration: none
     &.active
-      //color: red
-      a
-        color: #6DBCDB
+      background-color: #f5f5f5
+      border-right: 3px solid #303f9f
+      .nav-link
+        color: #303f9f
 .social-wrap
   margin-top: auto
+  padding-bottom: 10px
   .social-list
     display: flex
     flex-direction: row

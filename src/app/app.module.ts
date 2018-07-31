@@ -9,7 +9,7 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 // import { faCoffee } from '@fortawesome/free-solid-svg-icons';
 import {HttpClientModule} from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import {MaterialModulesModule} from './shared/moduls/material-modules/material-modules.module';
+
 
 import { StoreModule } from '@ngrx/store';
 import {portfolioReducer} from './redux/portfolio.reducer';
@@ -21,6 +21,22 @@ import {SidebarComponent} from './shared/components/sidebar/sidebar.component';
 import {NotFoundComponent} from './shared/components/not-found/not-found.component';
 import {MatIconModule} from '@angular/material/icon';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {environment} from '../environments/environment';
+import {AngularFireModule} from 'angularfire2';
+import {AngularFireDatabaseModule} from 'angularfire2/database';
+import {AngularFireStorageModule} from 'angularfire2/storage';
+import {AngularFirestoreModule} from 'angularfire2/firestore';
+
+import {AdminModule} from './admin/admin.module';
+import {AuthModule} from './auth/auth.module';
+import {AngularFireAuthModule} from 'angularfire2/auth';
+import {MaterialModule} from './shared/moduls/material.module';
+import {AuthGuard} from './auth/auth.guard';
+
+import {LoaderComponent} from './shared/components/loader/loader.component';
+import {SharedModule} from './shared/moduls/shared.module';
+
+// import {AuthGuard} from './auth/auth.guard';
 
 
 
@@ -29,27 +45,30 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     AppComponent,
     SidebarComponent,
     NotFoundComponent,
+
   ],
   imports: [
     BrowserModule,
-
+    SharedModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireDatabaseModule,
+    AngularFirestoreModule,
+    AngularFireStorageModule,
+    AngularFireAuthModule,
     HttpClientModule,
     NgbModule.forRoot(),
-    MaterialModulesModule,
+    MaterialModule,
     MatIconModule,
     FormsModule,
-    ReactiveFormsModule,
-    // FontAwesomeModule,
-    // MaterialModulesModule,
     BrowserAnimationsModule,
-    // AppRouting,
-    // SharedModule,
+    AdminModule,
+    AuthModule,
     CoreModule,
     ViewsModule,
     AppRoutingModule,
     StoreModule.forRoot({portfolioPage: portfolioReducer}),
   ],
-  providers: [],
+  providers: [AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {
