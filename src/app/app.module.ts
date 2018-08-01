@@ -35,6 +35,7 @@ import {AuthGuard} from './auth/auth.guard';
 
 import {LoaderComponent} from './shared/components/loader/loader.component';
 import {SharedModule} from './shared/moduls/shared.module';
+import {SidebarService} from './shared/servises/sidebar.service';
 
 // import {AuthGuard} from './auth/auth.guard';
 
@@ -68,7 +69,7 @@ import {SharedModule} from './shared/moduls/shared.module';
     AppRoutingModule,
     StoreModule.forRoot({portfolioPage: portfolioReducer}),
   ],
-  providers: [AuthGuard],
+  providers: [AuthGuard, SidebarService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

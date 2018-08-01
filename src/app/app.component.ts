@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 import {TitleService} from './shared/servises/title.service';
+import {SidebarService} from './shared/servises/sidebar.service';
 
 
 @Component({
@@ -11,7 +12,9 @@ import {TitleService} from './shared/servises/title.service';
 export class AppComponent implements OnInit {
   title = 'app';
   today;
-  constructor( public titleService: TitleService){
+
+
+  constructor(public titleService: TitleService, public sidebarService: SidebarService) {
     titleService.init();
   }
 
@@ -19,4 +22,6 @@ export class AppComponent implements OnInit {
     // console.log(this.items);
     this.today = new Date();
   }
+
+
 }

@@ -1,0 +1,60 @@
+
+//.nav-btn-wrap
+//  width: 30px
+//  height: 30px
+//  position: fixed
+//  right: 20px
+//  bottom: 20px
+//  display: flex
+//  align-items: center
+//  justify-content: center
+.nav-btn
+  position: absolute
+  top: -5px
+  width: 30px
+  height: 30px
+  right: -50px
+  color: #ffffff
+  cursor: pointer
+  margin: 10px auto
+
+  transition: .5s ease-in-out
+  cursor: pointer
+  border: 1px solid #303F9F
+  border-radius: 50%
+  background: rgba(#303F9F,0.5)
+  z-index: 100
+.nav-btn span
+  display: block
+  position: absolute
+  height: 2px
+  width: 15px
+  background: #fff
+  border-radius: 4px
+  opacity: 1
+  left: 7px
+  transition: .25s ease-in-out
+.nav-btn
+  span
+    &:nth-child(1)
+      top: 6px
+    &:nth-child(2), &:nth-child(3)
+      top: 13px
+    &:nth-child(4)
+      top: 20px
+.open-sidebar
+  .nav-btn
+    span
+      &:nth-child(1)
+        top: 18px
+        width: 0
+        //left: 50%
+      &:nth-child(2)
+        transform: rotate(45deg)
+      &:nth-child(3)
+        transform: rotate(-45deg)
+      &:nth-child(4)
+        top: 18px
+        width: 0
+        //left: 50%
+

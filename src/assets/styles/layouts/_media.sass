@@ -1,8 +1,63 @@
 /*  MEDIA ================== */
 
 /*==========  Desktop First  ==========*/
-
-/* Large Devices, Wide Screens */
 @media only screen and (max-width : 1200px)
-  .class
-    display: block
+  .contact-info-wrap .contact-item
+    flex-direction: column
+    justify-content: center
+    align-items: center
+  .contact-info-wrap .contact-info
+    text-align: center
+    margin-left: 0
+    margin-top: 20px
+/* Large Devices, Wide Screens */
+@media only screen and (max-width : 992px)
+  .content-wrap
+    margin: 20px 10px
+    padding: 10px 0
+  .wraper
+    padding: 20px 0
+    .sidebar-wrap
+      z-index: 2
+      left: -210px
+      transition: left 0.35s
+      &.open-sidebar
+        left: 0
+    .nav-btn
+      display: block
+  .wraper .page-wraper
+    width: 100%
+    margin-left: 0
+  .blockquote
+    padding: 15px 0 15px 15px
+@media only screen and (max-width : 768px)
+  .info-wrap
+    flex-direction: column
+    .info-item
+      margin-bottom: 20px
+  .portfolio-wrap
+    flex-direction: column
+    .portfolio-item
+      width: 100%
+      margin-right: 0
+  .portfolio-wrap .portfolio-item .img-wrap
+    height: 215px
+
+  .portfolio-wrap .portfolio-item .img-wrap
+    height: auto
+    img
+      width: 100%
+      height: auto
+  .contact-info-wrap
+    flex-direction: column
+  .contact-info-wrap .contact-item
+    width: 100%
+    max-width: 300px
+    //margin-right: 0
+    margin: 0 auto 30px auto
+    &:last-child
+      margin-right: auto
+@media only screen and (max-width : 480px)
+
+  .tesgs-wrap
+    display: none

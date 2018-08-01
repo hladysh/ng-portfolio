@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {BlogService} from '../../../views/blog/blog.service';
 import {AuthService} from '../../../auth/auth.service';
+import {SidebarService} from '../../servises/sidebar.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -11,6 +12,7 @@ export class SidebarComponent implements OnInit {
   blogServiseAll;
 
   constructor(private blogServise: BlogService,
+              public sidebarService: SidebarService,
               public authService: AuthService) {
   }
 

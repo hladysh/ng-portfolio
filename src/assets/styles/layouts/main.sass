@@ -17,6 +17,8 @@ a
 .text-center
   text-align: center
 
+
+
 .wraper
   height: 100%
   color: #222
@@ -34,24 +36,55 @@ a
     top: 0
     bottom: 0
     background: #f5f5f5
+
+  .page-wraper
+    width: 83%
+    margin-left: calc(17% + 30px)
   .content-wrap
     position: relative
     display: flex
     flex-direction: column
     align-items: center
     justify-content: center
-    margin-left: calc(17% + 30px)
     background: #ffffff
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.5)
     color: #000
     min-height: calc( 100vh - 105px)
+.nav-btn
+  display: none
 
 .sidebar-contant
   display: flex
   //align-items: center
   flex-direction: column
   height: 100%
+.wraper
+  display: flex
+  flex-direction: column
+  padding: 20px 25px
 
+.info-wrap
+  display: flex
+  flex-direction: row
+  justify-content: space-between
+  align-items:  center
+  .info-item
+    display: flex
+    flex-direction: row
+    .fa
+      margin-right: 15px
+    .info-title
+      font-size: 18px
+      font-weight: 700
+      margin-bottom: 5px
+.hr-blue
+  margin: 30px 0
+
+.footer
+  width: 100%
+
+  .copy
+    text-align: center
 .social-wrap
   margin-top: auto
 
@@ -63,7 +96,7 @@ a
 .content-wrap
   margin: 20px 20px
   padding: 15px 30px 35px 30px
-  width: 83%
+
 
 .section-title
   position: relative
@@ -150,10 +183,8 @@ a
   justify-content: space-between
   .portfolio-item
     position: relative
-    //max-width: calc( 50% - 10px)
     max-width: 475px
     width: 48%
-    min-width: 350px
     margin-right: 4%
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.298039)
     margin-bottom: 30px
@@ -162,12 +193,14 @@ a
 
 
     .img-wrap
-      max-height: 200px
+      height: 175px
+      //max-height: 175px
       overflow: hidden
       border-bottom: 6px solid #303F9F
       img
         display: block
-        max-width: 100%
+        width: auto
+        height: 100%
   &.portfolio-preview
     .portfolio-item
       width: 100%
@@ -222,6 +255,37 @@ a
       align-items: center
     .tegs-list
       margin-left: 5px
+.contact-info-wrap
+  flex-direction: row
+  margin : 30px 0
+  .contact-item
+    transition: all 0.2s ease-in-out
+    border: 1px solid #eee
+    width: 30%
+    margin-right: 5%
+    padding: 30px 15px
+    &:last-child
+      margin-right: 0
+    &:hover
+      transform: translateY(-5px)
+      box-shadow: 0 12px 17px rgba(0,0,0,.12)
+  .contact-info
+    flex-direction: column
+    margin-left: 10px
+  .contact-text
+    font-size: 16px
+    font-weight: 500
+    &.contact-title
+      font-size: 18px
+    &:hover
+      text-decoration: none
+.contact-form-wrap
+  max-width: 550px
+  margin: 0 auto 20px auto
+  .section-subtitle
+    margin-top: 50px
+    margin-bottom: 10px
+
 
 .example-form
   min-width: 150px
