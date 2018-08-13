@@ -1,83 +1,84 @@
-<div class="row">
-  <div class="col-6">
-    <div class="portfolio-wrap portfolio-preview">
-      <div class="portfolio-item">
-        <div class="img-wrap">
-          <img src="{{portfolioFormService.portfolioForm.value.portfolioImg}}"
-               alt="{{portfolioFormService.portfolioForm.value.portfolioAlt}}">
-        </div>
-        <div class="portfolio-body">
-          <h4 class="portfolio-title">{{portfolioFormService.portfolioForm.value.portfolioName}}</h4>
-          <p class="portfolio-descr"> {{portfolioFormService.portfolioForm.value.portfolioDescr}}</p>
-        </div>
-        <div class="portfolio-footer">
-          <a href="{{portfolioFormService.portfolioForm.value.portfolioHref}}" class="btn-demo" target="_blank">Live
-            demo</a>
+
+  <div class="row">
+    <div class="col-xs-12 col-md-6">
+      <div class="portfolio-wrap portfolio-preview">
+        <div class="portfolio-item">
+          <div class="img-wrap">
+            <img src="{{portfolioFormService.portfolioForm.value.portfolioImg}}"
+                 alt="{{portfolioFormService.portfolioForm.value.portfolioAlt}}">
+          </div>
+          <div class="portfolio-body">
+            <h4 class="portfolio-title">{{portfolioFormService.portfolioForm.value.portfolioName}}</h4>
+            <p class="portfolio-descr"> {{portfolioFormService.portfolioForm.value.portfolioDescr}}</p>
+          </div>
+          <div class="portfolio-footer">
+            <a href="{{portfolioFormService.portfolioForm.value.portfolioHref}}" class="btn-demo" target="_blank">Live
+              demo</a>
+          </div>
         </div>
       </div>
     </div>
+    <div class="col-xs-12 col-md-6">
+      <form [formGroup]="portfolioFormService.portfolioForm" novalidate (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label>Portfolio name</label>
+          <input class="form-control" name="name" formControlName="portfolioName"/>
+          <div class="alert alert-danger"
+               *ngIf="portfolioFormService.portfolioForm.controls['portfolioName'].invalid && portfolioFormService.portfolioForm.controls['portfolioName'].touched">
+            Is
+            required 'Portfolio name' mast write!
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Portfolio demo link</label>
+          <input class="form-control" name="name" formControlName="portfolioHref"/>
+          <div class="alert alert-danger"
+               *ngIf="portfolioFormService.portfolioForm.controls['portfolioHref'].invalid && portfolioFormService.portfolioForm.controls['portfolioHref'].touched">
+            Is
+            required 'Portfolio demo link' mast write!
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Portfolio img link</label>
+          <input class="form-control" name="name" formControlName="portfolioImg"/>
+          <div class="alert alert-danger"
+               *ngIf="portfolioFormService.portfolioForm.controls['portfolioImg'].invalid && portfolioFormService.portfolioForm.controls['portfolioImg'].touched">
+            Is
+            required 'Portfolio img link' mast write!
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Portfolio Alt </label>
+          <input class="form-control" name="name" formControlName="portfolioAlt"/>
+          <div class="alert alert-danger"
+               *ngIf="portfolioFormService.portfolioForm.controls['portfolioAlt'].invalid && portfolioFormService.portfolioForm.controls['portfolioAlt'].touched">
+            Is
+            required 'Portfolio Alt ' mast write!
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Portfolio descr</label>
+          <textarea class="form-control" name="name" formControlName="portfolioDescr"> </textarea>
+          <div class="alert alert-danger"
+               *ngIf="portfolioFormService.portfolioForm.controls['portfolioDescr'].invalid && portfolioFormService.portfolioForm.controls['portfolioDescr'].touched">
+            Is
+            required 'Portfolio descr' mast write!
+          </div>
+        </div>
+        <div class="form-group">
+          <button class="btn btn-default"
+                  *ngIf="!portfolioFormService.editState"
+                  [disabled]="portfolioFormService.portfolioForm.invalid">
+            Add portfolio
+          </button>
+          <button class="btn btn-default"
+                  [disabled]="portfolioFormService.portfolioForm.invalid"
+                  *ngIf="portfolioFormService.editState"
+          >
+            Save portfolio
+          </button>
+        </div>
+      </form>
+    </div>
   </div>
-  <div class="col-6">
-    <form [formGroup]="portfolioFormService.portfolioForm" novalidate (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label>Portfolio name</label>
-        <input class="form-control" name="name" formControlName="portfolioName"/>
-        <div class="alert alert-danger"
-             *ngIf="portfolioFormService.portfolioForm.controls['portfolioName'].invalid && portfolioFormService.portfolioForm.controls['portfolioName'].touched">
-          Is
-          required 'Portfolio name' mast write!
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Portfolio demo link</label>
-        <input class="form-control" name="name" formControlName="portfolioHref"/>
-        <div class="alert alert-danger"
-             *ngIf="portfolioFormService.portfolioForm.controls['portfolioHref'].invalid && portfolioFormService.portfolioForm.controls['portfolioHref'].touched">
-          Is
-          required 'Portfolio demo link' mast write!
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Portfolio img link</label>
-        <input class="form-control" name="name" formControlName="portfolioImg"/>
-        <div class="alert alert-danger"
-             *ngIf="portfolioFormService.portfolioForm.controls['portfolioImg'].invalid && portfolioFormService.portfolioForm.controls['portfolioImg'].touched">
-          Is
-          required 'Portfolio img link' mast write!
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Portfolio Alt </label>
-        <input class="form-control" name="name" formControlName="portfolioAlt"/>
-        <div class="alert alert-danger"
-             *ngIf="portfolioFormService.portfolioForm.controls['portfolioAlt'].invalid && portfolioFormService.portfolioForm.controls['portfolioAlt'].touched">
-          Is
-          required 'Portfolio Alt ' mast write!
-        </div>
-      </div>
-      <div class="form-group">
-        <label>Portfolio descr</label>
-        <textarea class="form-control" name="name" formControlName="portfolioDescr"> </textarea>
-        <div class="alert alert-danger"
-             *ngIf="portfolioFormService.portfolioForm.controls['portfolioDescr'].invalid && portfolioFormService.portfolioForm.controls['portfolioDescr'].touched">
-          Is
-          required 'Portfolio descr' mast write!
-        </div>
-      </div>
-      <div class="form-group">
-        <button class="btn btn-default"
-                *ngIf="!portfolioFormService.editState"
-                [disabled]="portfolioFormService.portfolioForm.invalid">
-          Add portfolio
-        </button>
-        <button class="btn btn-default"
-                [disabled]="portfolioFormService.portfolioForm.invalid"
-                *ngIf="portfolioFormService.editState"
-        >
-          Save portfolio
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
 

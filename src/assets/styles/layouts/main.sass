@@ -199,8 +199,8 @@ a
       border-bottom: 6px solid #303F9F
       img
         display: block
-        width: auto
-        height: 100%
+        width: 100%
+
   &.portfolio-preview
     .portfolio-item
       width: 100%
@@ -261,9 +261,11 @@ a
   .contact-item
     transition: all 0.2s ease-in-out
     border: 1px solid #eee
-    width: 30%
     margin-right: 5%
     padding: 30px 15px
+    width: 30%
+    max-width: 300px
+    margin: 0 auto 30px auto
     &:last-child
       margin-right: 0
     &:hover
@@ -314,8 +316,10 @@ a
 //app-admin,
 //app-contacts
 //  width: 100%
-app-contacts
-
+app-resume,
+app-contacts,
+app-admin
+  width: 100%
 app-login,
 app-auth
   display: flex
